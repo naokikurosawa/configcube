@@ -1,0 +1,18 @@
+ja:
+  activemodel:
+    attributes:
+      registration:
+        email: メールアドレス
+        password: パスワード
+        secret: シークレット
+        timezone: タイムゾーン
+    errors:
+      messages:
+        model_invalid: モデルが不正です
+  activerecord:
+    attributes:
+      user:
+        sign_in_id: ログインID
+  errors:
+    messages:
+      invalid_type: "'%{type}'は不正です"
