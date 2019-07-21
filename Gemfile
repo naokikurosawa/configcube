@@ -5,6 +5,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 
+# Decorators/View-Models for Rails Applications
+gem 'draper'
+# Enumerated attributes with I18n
+gem 'enumerize'
+# Aggregated settings
+gem 'global'
+# Taming Rails' Default Request Logging
+gem 'lograge'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
@@ -12,7 +20,10 @@ gem 'puma', '~> 3.11'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 gem 'rails-i18n', '~> 5.1'
-
+# Seed loader from yml
+gem 'simple_seed'
+# Slim template engine
+gem 'slim-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Use Uglifier as compressor for JavaScript assets
@@ -47,6 +58,19 @@ group :development, :test do
 end
 
 group :development do
+  # Annotate Rails classes with schema and routes info
+  gem 'annotate'
+
+  # Better error page for Rack apps
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
+  # A static analysis security vulnerability scanner
+  gem 'brakeman', require: false
+
+  # Patch-level verification for Bundler
+  gem 'bundler-audit'
+
   # Guard watches files and runs a command after a file is modified
   gem 'guard'
   # Guard rspec integration
@@ -59,12 +83,20 @@ group :development do
   # The Listen gem listens to file modifications and notifies you about the changes
   gem 'listen', '>= 3.0.5', '< 3.2'
 
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
+  # Pry
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
 
   # Spring speeds up development by keeping your application running in the background.
   gem 'spring'
+  gem 'spring-commands-rspec'
+  gem 'spring-commands-rubocop'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'web-console', '>= 3.3.0'
 end
 
 group :test do
