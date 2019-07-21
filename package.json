@@ -1,0 +1,52 @@
+{
+  "name": "configcube",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build:prod": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naokikurosawa/configcube.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/naokikurosawa/configcube/issues"
+  },
+  "homepage": "https://github.com/naokikurosawa/configcube#readme",
+  "devDependencies": {
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.4",
+    "autoprefixer": "^9.6.1",
+    "css-loader": "^3.1.0",
+    "csswring": "^7.0.0",
+    "file-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^6.0.4",
+    "tslint": "^5.18.0",
+    "tslint-loader": "^3.5.4",
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.5.3",
+    "url-loader": "^2.1.0",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-manifest-plugin": "^2.0.4",
+    "webpack-notifier": "^1.8.0"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}

@@ -17,7 +17,12 @@
 
 
 /public/assets
+/public/javascripts
+/public/stylesheets
+/public/webpack-manifest.json
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/node_modules

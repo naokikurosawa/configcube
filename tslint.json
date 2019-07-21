@@ -1,0 +1,13 @@
+{
+  "extends": [ "tslint:latest", "tslint-react" ],
+  "rules": {
+    "arrow-parens": [ true, "ban-single-arg-parens" ],
+    "curly": [ true, "ignore-same-line" ],
+    "cyclomatic-complexity": true,
+    "jsx-boolean-value": false,
+    "no-submodule-imports": false,
+    "space-within-parens": false,
+    "trailing-comma": false,
+    "no-var-requires": false
+  }
+}
