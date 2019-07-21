@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -29,14 +31,38 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+
+  # Loading environment variables from `.env`
+  gem 'dotenv-rails', require: 'dotenv/rails-now'
+
+  # rspec
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rspec-rails', '~> 3.8'
+
+  # rubocop
+  gem 'rubocop', '~> 0.73.0', require: false
+  gem 'rubocop-rails'
 end
 
 group :development do
+  # Guard watches files and runs a command after a file is modified
+  gem 'guard'
+  # Guard rspec integration
+  gem 'guard-rspec', require: false
+  # Guard rubocop integration
+  gem 'guard-rubocop', require: false
+  # Notify desktop from guard
+  gem 'terminal-notifier-guard'
+
+  # The Listen gem listens to file modifications and notifies you about the changes
+  gem 'listen', '>= 3.0.5', '< 3.2'
+
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
-  gem 'listen', '>= 3.0.5', '< 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+
+  # Spring speeds up development by keeping your application running in the background.
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end

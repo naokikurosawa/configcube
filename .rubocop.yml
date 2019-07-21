@@ -1,0 +1,54 @@
+require: rubocop-rails
+
+AllCops:
+  Exclude:
+    - app/graphql/types/query_type.rb
+    - 'bin/**/*'
+    - 'config/routes.rb'
+    - 'db/migrate/**/*'
+    - 'db/schema.rb'
+    - 'db/seeds.rb'
+    - 'log/**/*'
+    - 'node_modules/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - test
+    - production
+    - staging
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+Style/Documentation:
+  Enabled: false
+
+Layout/AlignHash:
+  Enabled: false
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Gemfile'
+    - 'Guardfile'
+    - 'app/graphql/**/*'
+
+Metrics/LineLength:
+  Max: 100
+
+Metrics/MethodLength:
+  Max: 12
+
+Naming/UncommunicativeMethodParamName:
+  Enabled: false
