@@ -1,0 +1,16 @@
+default:
+  rollbar_client_access_token: <%= ENV['ROLLBAR_CLIENT_ACCESS_TOKEN'] %>
+  rollbar_server_access_token: <%= ENV['ROLLBAR_SERVER_ACCESS_TOKEN'] %>
+  use_webpack_dev_server: false
+
+test:
+  dummy: dummy
+
+development:
+  use_webpack_dev_server: <%= ENV.fetch('USE_WEBPACK_DEV_SERVER', true) %>
+
+staging:
+  redis_url: <%= ENV['REDIS_URL'] %>
+
+production:
+  redis_url: <%= ENV['REDIS_URL'] %>

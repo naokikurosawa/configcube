@@ -27,7 +27,7 @@ const userAppConfig = ( env, argv ) => {
   const production = argv.mode === "production";
   return {
     entry: compact( {
-      user_app: `./${JS}/entry.ts`,
+      main_app: `./${JS}/main.tsx`,
       css_app: production ? null : `./${JS}/css.js`
     } ),
     output: {

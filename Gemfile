@@ -5,10 +5,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 
+# Flexible authentication solution for Rails
+gem 'devise'
+gem 'devise-i18n'
 # Decorators/View-Models for Rails Applications
 gem 'draper'
 # Enumerated attributes with I18n
 gem 'enumerize'
+# Substitute for Active Record Observer on Rails 5
+gem 'everett'
 # Aggregated settings
 gem 'global'
 # Taming Rails' Default Request Logging

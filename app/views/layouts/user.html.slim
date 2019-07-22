@@ -1,0 +1,24 @@
+html
+  head
+    meta charset='utf-8'
+    title ConfigCube
+    meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'
+    meta http-equiv='X-UA-Compatible' content='IE=edge'
+    link rel='shortcut icon' href='/favicon.ico'
+    script type="text/javascript" src="//typesquare.com/3/tsst/script/ja/typesquare.js?5d351c6db23c42fea9f440baac1e02ec" charset="utf-8"
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    - unless Global.settings.use_webpack_dev_server?
+      link rel='stylesheet' media='all' href="#{front_assets_path('main_app.css')}"
+  body
+    == yield
+    javascript:
+      window.wsUrl = "#{@ws_url}";
+    - if Global.settings.use_webpack_dev_server?
+      script type='text/javascript' src='//localhost:9091/javascripts/css_app.js'
+      script type='text/javascript' src='//localhost:9091/javascripts/main_app.js'
+    - else
+      script type='text/javascript' src="#{front_assets_path('main_app.js')}"

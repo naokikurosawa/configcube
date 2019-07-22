@@ -57,6 +57,11 @@ class Configcube::Application < Rails::Application
   end
 end
 
+Global.configure do |config|
+  config.environment = Rails.env.to_s
+  config.config_directory = Rails.root.join('config', 'global').to_s
+end
+
 # Rails bug patch
 # rubocop:disable Rails/ApplicationRecord
 class ActiveRecord::InternalMetadata < ActiveRecord::Base

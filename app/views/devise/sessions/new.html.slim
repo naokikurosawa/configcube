@@ -1,0 +1,34 @@
+section
+  .container
+    .row
+      .col-sm-12
+        .wrapper-page
+          .account-pages.m-t-40
+            .account-logo-box.text-center
+              h2.text-uppercase
+                .NewSessionLogo
+            .account-content style='font-family: "UD Shin Go Light"'
+              = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal' }) do |f|
+                = render "devise/shared/error_messages", resource: resource
+                .form-group.m-b-25
+                  .col-12
+                    = f.label :email
+                    = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control input-lg', placeholder: 'john@example.com'
+                .form-group.m-b-25
+                  .col-12
+                    = link_to t('devise.passwords.new.forgot_your_password'), new_password_path(resource_name), class: 'text-muted float-right'
+                    = f.label :password
+                    = f.password_field :password, autocomplete: "current-password", class: 'form-control input-lg'
+                - if devise_mapping.rememberable?
+                  .form-group.m-b-20
+                    .col-12
+                      .checkbox.checkbox-custom
+                        label
+                          = f.check_box :remember_me
+                          span.cr
+                            i.cr-icon.fa.fa-check
+                          = t('activerecord.attributes.user.remember_me')
+                .form-group.account-btn.text-center.m-t-10
+                  .col-12
+                    = f.submit t('devise.sessions.new.sign_in'), class: 'btn w-lg btn-rounded btn-lg btn-primary waves-effect waves-light'
+              .clearfix

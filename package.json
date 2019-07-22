@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/naokikurosawa/configcube#readme",
   "devDependencies": {
+    "@types/debug": "^4.1.4",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
     "@types/webpack-env": "^1.14.0",
@@ -48,7 +49,10 @@
     "webpack-notifier": "^1.8.0"
   },
   "dependencies": {
+    "@types/react-bootstrap": "^0.32.19",
+    "debug": "^4.1.1",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.9",
     "react-dom": "^16.8.6"
   }
 }
