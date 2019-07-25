@@ -1,4 +1,5 @@
 const path = require( "path" );
+const webpack = require( "webpack" );
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ManifestPlugin = require( "webpack-manifest-plugin" );
 const WebpackNotifierPlugin = require( "webpack-notifier" );
@@ -101,7 +102,12 @@ const userAppConfig = ( env, argv ) => {
       disableHostCheck: true
     },
     plugins: compact( [
-      new MiniCssExtractPlugin( {
+      new webpack.DefinePlugin( {
+        "process.env.NODE_ENV": JSON.stringify( process.env.NODE_ENV ),
+        "__DEVELOPMENT__": !production,
+        "__PRODUCTION__": production
+      } ),
+        new MiniCssExtractPlugin( {
         filename: `stylesheets/${ production ? "[name]-[hash].css" : "[name].css" }`,
         chunkFilename: `stylesheets/${ production ? "[id]-[hash].css" : "[id].css" }`
       } ),
